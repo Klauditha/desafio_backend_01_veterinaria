@@ -1,9 +1,1 @@
-[
-  {
-    "nombre": "registrar",
-    "edad": "Benito",
-    "tipo": "2 años",
-    "color": "perro",
-    "enfermedad": "blanco"
-  }
-]
+[{"nombre":"registrar","edad":"Benito","tipo":"3 años","color":"perro","enfermedad":"blanco"},{"nombre":"registrar","edad":"Benito","tipo":"3 años","color":"perro","enfermedad":"blanco"}]

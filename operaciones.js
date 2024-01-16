@@ -1,7 +1,12 @@
 const fs = require('fs');
 
-let citas = [];
 const Registrar = (nombre, edad, tipo, color, enfermedad) => {
+  let citas = [];
+  if (fs.existsSync('./citas.json')) {
+    let data = fs.readFileSync('./citas.json', 'utf8');
+    citas = JSON.parse(data);
+  }
+
   let registro = {
     nombre,
     edad,
@@ -14,8 +19,17 @@ const Registrar = (nombre, edad, tipo, color, enfermedad) => {
 };
 
 const Leer = () => {
-  let data = fs.readFileSync('./citas.json', 'utf8');
-  console.log(JSON.parse(data));
+  if (fs.existsSync('./citas.json')) {
+    let data = fs.readFileSync('./citas.json', 'utf8');
+    citas = JSON.parse(data);
+    if (citas.length == 0) {
+      console.log('No hay registros en el archivo citas.json');
+    } else {
+      console.log(citas);
+    }
+  } else {
+    console.log('No existe el archivo citas.json');
+  }
 };
 
 module.exports = {
